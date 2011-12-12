@@ -17,6 +17,7 @@ my $builder = Module::Build->new(
         'perl'         => '5.6.0',  # our()
         'parent'       => 0,
         'String::Dump' => 0,
+        'Template'     => 2.07,  # Template::Plugin::Filter
     },
     meta_merge => {
         resources => {
