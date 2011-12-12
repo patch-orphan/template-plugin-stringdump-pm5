@@ -14,8 +14,9 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-        'perl'   => '5.6.0',  # our()
-        'parent' => 0,
+        'perl'         => '5.6.0',  # our()
+        'parent'       => 0,
+        'String::Dump' => 0,
     },
     meta_merge => {
         resources => {
