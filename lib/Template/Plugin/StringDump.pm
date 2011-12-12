@@ -50,10 +50,10 @@ Template:
     [% SET msg = 'Ĝis! ☺' %]
 
     hex: [% msg | dump %]
-    dec: [% msg | dump(dec) %]
-    oct: [% msg | dump(oct) %]
-    bin: [% msg | dump(bin) %]
-    names: [% msg | dump(names) %]
+    dec: [% msg | dump('dec') %]
+    oct: [% msg | dump('oct') %]
+    bin: [% msg | dump('bin') %]
+    names: [% msg | dump('names') %]
 
 Output:
 
@@ -76,7 +76,7 @@ The filter takes the C<dump_string> mode as an optional argument, defaulting
 to C<hex>.  See L<String::Dump> for details.
 
 The filter name C<dump> was selected instead of C<dump_string> because filters
-only work on strings, so the name would be repetative.  It also doesn't
+only work on strings, so the name would be repetitive.  It also doesn't
 compete with other TT plugins like L<Template::Plugin::Dump> or
 L<Template::Plugin::Dumper> because they need to function on data structures,
 as opposed to strings, so they don't provide filters.
