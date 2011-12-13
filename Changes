@@ -1,4 +1,11 @@
 ---
+version: 0.02
+date:    2011-12-12
+changes:
+- Fixed warnings in t/filter.t
+- Updated for compatibility with String::Dump 0.03+
+- [NOTE] String::Dump 0.03 is now required
+---
 version: 0.01
 date:    2011-12-12
 changes:

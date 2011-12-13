@@ -6,7 +6,7 @@ use warnings;
 use parent qw( Template::Plugin::Filter );
 use String::Dump;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our $DYNAMIC = 1;  # dynamic filter
 
 use constant FILTER_NAME => 'dump';
@@ -39,7 +39,7 @@ Template::Plugin::StringDump - String::Dump plugin for TT
 
 =head1 VERSION
 
-This document describes Template::Plugin::StringDump version 0.01.
+This document describes Template::Plugin::StringDump version 0.02.
 
 =head1 SYNOPSIS
 

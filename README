@@ -2,7 +2,7 @@ NAME
     Template::Plugin::StringDump - String::Dump plugin for TT
 
 VERSION
-    This document describes Template::Plugin::StringDump version 0.01.
+    This document describes Template::Plugin::StringDump version 0.02.
 
 SYNOPSIS
     Template:
@@ -32,13 +32,13 @@ SYNOPSIS
 DESCRIPTION
     This Template::Toolkit plugin adds the "dump" filter, which dumps
     strings of characters or bytes for display and debugging. This filter is
-    a simple wrapper around the "dump_string" function from the String::Dump
-    module. The filter takes the "dump_string" mode as an optional argument,
+    a simple wrapper around the "dumpstr" function from the String::Dump
+    module. The filter takes the "dumpstr" mode as an optional argument,
     defaulting to "hex". See String::Dump for details.
 
-    The filter name "dump" was selected instead of "dump_string" because
-    filters only work on strings, so the name would be repetitive. It also
-    doesn't compete with other TT plugins like Template::Plugin::Dump or
+    The filter name "dump" was selected instead of "dumpstr" because filters
+    only work on strings, so the name would be repetitive. It also doesn't
+    compete with other TT plugins like Template::Plugin::Dump or
     Template::Plugin::Dumper because they need to function on data
     structures, as opposed to strings, so they don't provide filters.
 
