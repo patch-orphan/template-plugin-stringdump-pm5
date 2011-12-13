@@ -23,8 +23,8 @@ sub filter {
     my ($self, $string, $args, $conf) = @_;
     my ($mode) = @{$args};
 
-    return dump_string($string) unless $mode;
-    return dump_string($mode, $string);
+    return dumpstr($string) unless $mode;
+    return dumpstr($mode, $string);
 }
 
 1;
@@ -71,11 +71,11 @@ document.
 
 This L<Template::Toolkit> plugin adds the C<dump> filter, which dumps strings
 of characters or bytes for display and debugging.  This filter is a simple
-wrapper around the C<dump_string> function from the L<String::Dump> module.
-The filter takes the C<dump_string> mode as an optional argument, defaulting
-to C<hex>.  See L<String::Dump> for details.
+wrapper around the C<dumpstr> function from the L<String::Dump> module.  The
+filter takes the C<dumpstr> mode as an optional argument, defaulting to
+C<hex>.  See L<String::Dump> for details.
 
-The filter name C<dump> was selected instead of C<dump_string> because filters
+The filter name C<dump> was selected instead of C<dumpstr> because filters
 only work on strings, so the name would be repetitive.  It also doesn't
 compete with other TT plugins like L<Template::Plugin::Dump> or
 L<Template::Plugin::Dumper> because they need to function on data structures,
