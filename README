@@ -2,7 +2,7 @@ NAME
     Template::Plugin::StringDump - String::Dump plugin for TT
 
 VERSION
-    This document describes Template::Plugin::StringDump version 0.02.
+    This document describes Template::Plugin::StringDump version 0.03.
 
 SYNOPSIS
     Template:

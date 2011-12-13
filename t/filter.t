@@ -1,7 +1,10 @@
 use strict;
 use warnings;
-use utf8::all;
+use utf8;
 use Template::Test;
+
+# utf8 in TAP output
+binmode STDOUT, ':utf8';
 
 test_expect(\*DATA);
 
