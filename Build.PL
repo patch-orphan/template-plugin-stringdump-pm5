@@ -11,7 +11,8 @@ my $builder = Module::Build->new(
         'Module::Build' => 0.36,
     },
     build_requires => {
-        'Test::More' => 0,
+        'utf8::all'  => 0,
+        'Test::More' => 0.41,  # diag()
     },
     requires => {
         'perl'         => '5.6.0',  # our()

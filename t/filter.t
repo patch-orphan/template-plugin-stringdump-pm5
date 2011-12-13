@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use utf8;
+use utf8::all;
 use Template::Test;
 
 test_expect(\*DATA);
