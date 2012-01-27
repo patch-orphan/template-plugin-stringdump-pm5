@@ -3,6 +3,7 @@ package Template::Plugin::StringDump;
 use 5.006;
 use strict;
 use warnings;
+use utf8;
 use parent qw( Template::Plugin::Filter );
 use String::Dump qw( dump_hex dump_dec dump_oct dump_bin dump_names );
 
@@ -26,7 +27,7 @@ __END__
 
 =head1 NAME
 
-Template::Plugin::StringDump - String::Dump plugin for TT
+Template::Plugin::StringDump - String::Dump filter for TT
 
 =head1 VERSION
 
@@ -44,27 +45,22 @@ Template:
     dec: [% msg | dump_dec %]
     oct: [% msg | dump_oct %]
     bin: [% msg | dump_bin %]
-    names: [% msg | dump_names %]
 
 Output:
 
-    hex: 11C 69 73 21 20 263A
-    dec: 284 105 115 33 32 9786
-    oct: 434 151 163 41 40 23072
-    bin: 100011100 1101001 1110011 100001 100000 10011000111010
-    names: LATIN CAPITAL LETTER G WITH CIRCUMFLEX, LATIN SMALL LETTER I,
-    LATIN SMALL LETTER S, EXCLAMATION MARK, SPACE, WHITE SMILING FACE
-
-The output has been manually split into multiple lines for the layout of this
-document.
+    hex: C4 9C 69 73 21 20 E2 98 BA
+    dec: 196 156 105 115 33 32 226 152 186
+    oct: 304 234 151 163 41 40 342 230 272
+    bin: 11000100 10011100 1101001 1110011 100001 100000 11100010 10011000 10111010
 
 =head1 DESCRIPTION
 
-This L<Template::Toolkit> plugin adds five filters for dumping strings of
-characters for diplsay and debugging: C<dump_hex>, C<dump_dec>, C<dump_oct>,
-C<dump_bin>, and C<dump_names>.  These filters are simple wrappers around the
-functions of the same names from L<String::Dump>.  See that module for
-details.
+This L<Template::Toolkit> plugin adds five filters for dumping strings for
+display and debugging: C<dump_hex>, C<dump_dec>, C<dump_oct>, C<dump_bin>,
+and C<dump_names>.  Each octet (byte) is dumped on encoded strings and each
+character’s code point on decoded strings.  These filters are simple wrappers
+around the functions of the same names from L<String::Dump>.  See that module
+for details.
 
 =head1 AUTHOR
 
@@ -72,7 +68,7 @@ Nick Patch <patch@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2011 Nick Patch
+© 2011–2012 Nick Patch
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
