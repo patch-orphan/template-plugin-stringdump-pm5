@@ -4,27 +4,18 @@ use 5.006;
 use strict;
 use warnings;
 use parent qw( Template::Plugin::Filter );
-use String::Dump;
+use String::Dump qw( dump_hex dump_dec dump_oct dump_bin dump_names );
 
 our $VERSION = '0.03';
-our $DYNAMIC = 1;  # dynamic filter
-
-use constant FILTER_NAME => 'dump';
 
 sub init {
     my ($self) = @_;
 
-    $self->install_filter(FILTER_NAME);
+    for my $filter (qw< dump_hex dump_dec dump_oct dump_bin dump_names >) {
+        $self->{_CONTEXT}->define_filter($filter => \&$filter);
+    }
 
     return $self;
-}
-
-sub filter {
-    my ($self, $string, $args, $conf) = @_;
-    my ($mode) = @{$args};
-
-    return dumpstr($string) unless $mode;
-    return dumpstr($mode, $string);
 }
 
 1;
@@ -49,11 +40,11 @@ Template:
 
     [% SET msg = 'Ĝis! ☺' %]
 
-    hex: [% msg | dump %]
-    dec: [% msg | dump('dec') %]
-    oct: [% msg | dump('oct') %]
-    bin: [% msg | dump('bin') %]
-    names: [% msg | dump('names') %]
+    hex: [% msg | dump_hex %]
+    dec: [% msg | dump_dec %]
+    oct: [% msg | dump_oct %]
+    bin: [% msg | dump_bin %]
+    names: [% msg | dump_names %]
 
 Output:
 
@@ -69,17 +60,11 @@ document.
 
 =head1 DESCRIPTION
 
-This L<Template::Toolkit> plugin adds the C<dump> filter, which dumps strings
-of characters or bytes for display and debugging.  This filter is a simple
-wrapper around the C<dumpstr> function from the L<String::Dump> module.  The
-filter takes the C<dumpstr> mode as an optional argument, defaulting to
-C<hex>.  See L<String::Dump> for details.
-
-The filter name C<dump> was selected instead of C<dumpstr> because filters
-only work on strings, so the name would be repetitive.  It also doesn't
-compete with other TT plugins like L<Template::Plugin::Dump> or
-L<Template::Plugin::Dumper> because they need to function on data structures,
-as opposed to strings, so they don't provide filters.
+This L<Template::Toolkit> plugin adds five filters for dumping strings of
+characters for diplsay and debugging: C<dump_hex>, C<dump_dec>, C<dump_oct>,
+C<dump_bin>, and C<dump_names>.  These filters are simple wrappers around the
+functions of the same names from L<String::Dump>.  See that module for
+details.
 
 =head1 AUTHOR
 
