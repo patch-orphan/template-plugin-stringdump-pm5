@@ -8,7 +8,8 @@ META.json
 META.yml
 README
 t/00-load.t
-t/filter.t
+t/filter-decoded.t
+t/filter-encoded.t
 xt/author/kwalitee.t
 xt/author/pod-coverage.t
 xt/author/pod.t
