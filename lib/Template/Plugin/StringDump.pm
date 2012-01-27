@@ -7,7 +7,7 @@ use utf8;
 use parent qw( Template::Plugin::Filter );
 use String::Dump qw( dump_hex dump_dec dump_oct dump_bin dump_names );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub init {
     my ($self) = @_;
@@ -31,7 +31,7 @@ Template::Plugin::StringDump - String::Dump filter for TT
 
 =head1 VERSION
 
-This document describes Template::Plugin::StringDump version 0.03.
+This document describes Template::Plugin::StringDump version 0.04.
 
 =head1 SYNOPSIS
 

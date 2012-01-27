@@ -16,7 +16,7 @@ my $builder = Module::Build->new(
     requires => {
         'perl'         => '5.6.0',  # our()
         'parent'       => 0,
-        'String::Dump' => 0.03,  # dumpstr()
+        'String::Dump' => 0.05,  # dump_hex, dump_dec, etc.
         'Template'     => 2.07,  # Template::Plugin::Filter
     },
     meta_merge => {

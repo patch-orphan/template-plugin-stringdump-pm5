@@ -1,8 +1,8 @@
 NAME
-    Template::Plugin::StringDump - String::Dump plugin for TT
+    Template::Plugin::StringDump - String::Dump filter for TT
 
 VERSION
-    This document describes Template::Plugin::StringDump version 0.03.
+    This document describes Template::Plugin::StringDump version 0.04.
 
 SYNOPSIS
     Template:
@@ -11,42 +11,31 @@ SYNOPSIS
 
         [% SET msg = 'Ĝis! ☺' %]
 
-        hex: [% msg | dump %]
-        dec: [% msg | dump('dec') %]
-        oct: [% msg | dump('oct') %]
-        bin: [% msg | dump('bin') %]
-        names: [% msg | dump('names') %]
+        hex: [% msg | dump_hex %]
+        dec: [% msg | dump_dec %]
+        oct: [% msg | dump_oct %]
+        bin: [% msg | dump_bin %]
 
     Output:
 
-        hex: 11C 69 73 21 20 263A
-        dec: 284 105 115 33 32 9786
-        oct: 434 151 163 41 40 23072
-        bin: 100011100 1101001 1110011 100001 100000 10011000111010
-        names: LATIN CAPITAL LETTER G WITH CIRCUMFLEX, LATIN SMALL LETTER I,
-        LATIN SMALL LETTER S, EXCLAMATION MARK, SPACE, WHITE SMILING FACE
-
-    The output has been manually split into multiple lines for the layout of
-    this document.
+        hex: C4 9C 69 73 21 20 E2 98 BA
+        dec: 196 156 105 115 33 32 226 152 186
+        oct: 304 234 151 163 41 40 342 230 272
+        bin: 11000100 10011100 1101001 1110011 100001 100000 11100010 10011000 10111010
 
 DESCRIPTION
-    This Template::Toolkit plugin adds the "dump" filter, which dumps
-    strings of characters or bytes for display and debugging. This filter is
-    a simple wrapper around the "dumpstr" function from the String::Dump
-    module. The filter takes the "dumpstr" mode as an optional argument,
-    defaulting to "hex". See String::Dump for details.
-
-    The filter name "dump" was selected instead of "dumpstr" because filters
-    only work on strings, so the name would be repetitive. It also doesn't
-    compete with other TT plugins like Template::Plugin::Dump or
-    Template::Plugin::Dumper because they need to function on data
-    structures, as opposed to strings, so they don't provide filters.
+    This Template::Toolkit plugin adds five filters for dumping strings for
+    display and debugging: "dump_hex", "dump_dec", "dump_oct", "dump_bin",
+    and "dump_names". Each octet (byte) is dumped on encoded strings and
+    each character’s code point on decoded strings. These filters are simple
+    wrappers around the functions of the same names from String::Dump. See
+    that module for details.
 
 AUTHOR
     Nick Patch <patch@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright 2011 Nick Patch
+    © 2011–2012 Nick Patch
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

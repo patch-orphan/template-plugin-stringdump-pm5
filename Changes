@@ -1,17 +1,25 @@
+# Revision history for Perl module Template::Plugin::StringDump
+---
+version: 0.04
+date:    2012-01-26
+changes:
+  - WARNING! Replaced dump('foo') filters with dump_foo filters,
+    standardizing with String::Dump 0.05
+  - APOLOGY! Sorry for the backward-incompatible change
 ---
 version: 0.03
 date:    2011-12-13
 changes:
-- Removed utf8::all from tests because it requires Perl 5.10
+  - Removed utf8::all from tests because it requires Perl 5.10
 ---
 version: 0.02
 date:    2011-12-12
 changes:
-- Fixed warnings in t/filter.t
-- Updated for compatibility with String::Dump 0.03+
-- [NOTE] String::Dump 0.03 is now required
+  - Fixed warnings in t/filter.t
+  - Updated for compatibility with String::Dump 0.03+
+  - NOTICE! String::Dump 0.03 is now required
 ---
 version: 0.01
 date:    2011-12-12
 changes:
-- First release
+  - First release
