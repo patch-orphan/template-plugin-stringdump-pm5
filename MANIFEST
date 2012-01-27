@@ -1,0 +1,15 @@
+Build.PL
+Changes
+INSTALL
+lib/Template/Plugin/StringDump.pm
+LICENSE
+MANIFEST
+META.json
+META.yml
+README
+t/00-load.t
+t/filter.t
+xt/author/kwalitee.t
+xt/author/pod-coverage.t
+xt/author/pod.t
+xt/author/spelling.t
