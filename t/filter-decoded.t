@@ -4,7 +4,7 @@ use utf8;
 use Template::Test;
 
 # utf8 in TAP output
-binmode STDOUT, ':utf8';
+binmode STDOUT, ':encoding(UTF-8)';
 
 test_expect(\*DATA);
 
