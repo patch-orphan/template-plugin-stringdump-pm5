@@ -7,7 +7,7 @@ use utf8;
 use parent qw( Template::Plugin::Filter );
 use String::Dump qw( :all );
 
-our $VERSION = '0.04_1';
+our $VERSION = '0.05';
 
 sub init {
     my ($self) = @_;
@@ -30,7 +30,7 @@ sub init {
 
 __END__
 
-=encoding utf8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -38,7 +38,7 @@ Template::Plugin::StringDump - String::Dump filter for TT
 
 =head1 VERSION
 
-This document describes Template::Plugin::StringDump version 0.04_1.
+This document describes Template::Plugin::StringDump version 0.05.
 
 =head1 SYNOPSIS
 
@@ -64,10 +64,9 @@ Output:
 
 This L<Template::Toolkit> plugin adds six filters for dumping strings for
 display and debugging: C<dump_hex>, C<dump_dec>, C<dump_oct>, C<dump_bin>,
-C<dump_codes>, and C<dump_names>.  Each octet (byte) is dumped on encoded
-strings and each character’s code point on decoded strings.  These filters are
-simple wrappers around the functions of the same names from L<String::Dump>.
-See that module for details.
+C<dump_names>, and C<dump_codes>.  Each byte is dumped for byte strings and each
+code point for Unicode strings.  These filters are simple wrappers around the
+functions of the same names from L<String::Dump>.  See that module for details.
 
 =head1 AUTHOR
 
@@ -79,5 +78,3 @@ Nick Patch <patch@cpan.org>
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
-
-=cut

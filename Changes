@@ -1,6 +1,6 @@
 Revision history for Perl module Template::Plugin::StringDump
 
-0.04_1 XXX
+0.05 2012-10-25
  - Added dump_codes from String::Dump 0.08
  - Converted this file from YAML to the standard CPAN Changes format
 

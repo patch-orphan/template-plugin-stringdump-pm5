@@ -2,7 +2,7 @@ NAME
     Template::Plugin::StringDump - String::Dump filter for TT
 
 VERSION
-    This document describes Template::Plugin::StringDump version 0.04.
+    This document describes Template::Plugin::StringDump version 0.05.
 
 SYNOPSIS
     Template:
@@ -24,12 +24,12 @@ SYNOPSIS
         bin: 11000100 10011100 1101001 1110011 100001 100000 11100010 10011000 10111010
 
 DESCRIPTION
-    This Template::Toolkit plugin adds five filters for dumping strings for
+    This Template::Toolkit plugin adds six filters for dumping strings for
     display and debugging: "dump_hex", "dump_dec", "dump_oct", "dump_bin",
-    and "dump_names". Each octet (byte) is dumped on encoded strings and
-    each character’s code point on decoded strings. These filters are simple
-    wrappers around the functions of the same names from String::Dump. See
-    that module for details.
+    "dump_names", and "dump_codes". Each byte is dumped for byte strings and
+    each code point for Unicode strings. These filters are simple wrappers
+    around the functions of the same names from String::Dump. See that
+    module for details.
 
 AUTHOR
     Nick Patch <patch@cpan.org>

@@ -3,7 +3,7 @@ use warnings;
 use utf8;
 use Template::Test;
 
-# utf8 in TAP output
+# UTF-8 in TAP output
 binmode STDOUT, ':encoding(UTF-8)';
 
 test_expect(\*DATA);
@@ -32,11 +32,11 @@ __END__
 100011100 1101001 1110011 100001 100000 10011000111010
 
 --test--
-[% 'Ĝis! ☺' | dump_codes %]
---expect--
-U+011C U+0069 U+0073 U+0021 U+0020 U+263A
-
---test--
 [% 'Ĝis! ☺' | dump_names %]
 --expect--
 LATIN CAPITAL LETTER G WITH CIRCUMFLEX, LATIN SMALL LETTER I, LATIN SMALL LETTER S, EXCLAMATION MARK, SPACE, WHITE SMILING FACE
+
+--test--
+[% 'Ĝis! ☺' | dump_codes %]
+--expect--
+U+011C U+0069 U+0073 U+0021 U+0020 U+263A
