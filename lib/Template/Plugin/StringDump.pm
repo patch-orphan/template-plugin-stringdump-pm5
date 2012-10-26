@@ -5,14 +5,21 @@ use strict;
 use warnings;
 use utf8;
 use parent qw( Template::Plugin::Filter );
-use String::Dump qw( dump_hex dump_dec dump_oct dump_bin dump_names );
+use String::Dump qw( :all );
 
-our $VERSION = '0.04';
+our $VERSION = '0.04_1';
 
 sub init {
     my ($self) = @_;
 
-    for my $filter (qw< dump_hex dump_dec dump_oct dump_bin dump_names >) {
+    for my $filter (qw<
+        dump_hex
+        dump_dec
+        dump_oct
+        dump_bin
+        dump_names
+        dump_codes
+    >) {
         $self->{_CONTEXT}->define_filter($filter => \&$filter);
     }
 
@@ -31,7 +38,7 @@ Template::Plugin::StringDump - String::Dump filter for TT
 
 =head1 VERSION
 
-This document describes Template::Plugin::StringDump version 0.04.
+This document describes Template::Plugin::StringDump version 0.04_1.
 
 =head1 SYNOPSIS
 
@@ -55,12 +62,12 @@ Output:
 
 =head1 DESCRIPTION
 
-This L<Template::Toolkit> plugin adds five filters for dumping strings for
+This L<Template::Toolkit> plugin adds six filters for dumping strings for
 display and debugging: C<dump_hex>, C<dump_dec>, C<dump_oct>, C<dump_bin>,
-and C<dump_names>.  Each octet (byte) is dumped on encoded strings and each
-character’s code point on decoded strings.  These filters are simple wrappers
-around the functions of the same names from L<String::Dump>.  See that module
-for details.
+C<dump_codes>, and C<dump_names>.  Each octet (byte) is dumped on encoded
+strings and each character’s code point on decoded strings.  These filters are
+simple wrappers around the functions of the same names from L<String::Dump>.
+See that module for details.
 
 =head1 AUTHOR
 
